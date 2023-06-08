@@ -1,6 +1,6 @@
 # Leetcode-Python17
 
-## 654. Maximum Binary Tree, 617. Merge Two Binary Trees
+## 654. Maximum Binary Tree, 617. Merge Two Binary Trees, 700. Search in a Binary Search Tree
 
 June 07, 2023  4h
 
@@ -108,8 +108,9 @@ class Solution:
 ```
 
 
-## 700.
-二叉搜索树中的搜索，递归和迭代 都可以掌握以下，因为本题比较简单，了解二叉搜索树的特性。
+## 700. Search in a Binary Search Tree
+[leetcode](https://leetcode.com/problems/search-in-a-binary-search-tree/)\
+二叉搜索树中的搜索，**递归和迭代** 都可以掌握以下，因为本题比较简单，了解二叉搜索树的特性。
 
 
 
