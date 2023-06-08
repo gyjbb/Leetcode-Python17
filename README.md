@@ -1,6 +1,6 @@
 # Leetcode-Python17
 
-## 654. Maximum Binary Tree
+## 654. Maximum Binary Tree, 617. Merge Two Binary Trees
 
 June 07, 2023  4h
 
@@ -68,9 +68,44 @@ class Solution:
 ```
 
 
-## 617. 
-合并二叉树，优先掌握递归。
-
+## 617. Merge Two Binary Trees
+[leetcode](https://leetcode.com/problems/merge-two-binary-trees/)\
+合并二叉树，优先掌握递归。同步遍历两个tree，前序遍历。
+```python
+# ways 1: use recursion and middleorder traversal
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        #递归终止条件
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        root1.val += root2.val  #middle
+        root1.left = self.mergeTrees(root1.left, root2.left)    #left
+        root1.right = self.mergeTrees(root1.right, root2.right)    #left
+        return root1
+```
+```python
+# ways 2: use recursion and middleorder traversal, build a new node
+class Solution:
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        #递归终止条件
+        if not root1:
+            return root2
+        if not root2:
+            return root1
+        root = TreeNode()   # 创建新节点
+        root.val += root1.val + root2.val   #middle
+        root.left = self.mergeTrees(root1.left, root2.left)  #left
+        root.right = self.mergeTrees(root1.right, root2.right)  #right
+        return root
+```
 
 
 ## 700.
