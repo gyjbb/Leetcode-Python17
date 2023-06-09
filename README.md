@@ -110,8 +110,28 @@ class Solution:
 
 ## 700. Search in a Binary Search Tree
 [leetcode](https://leetcode.com/problems/search-in-a-binary-search-tree/)\
-二叉搜索树中的搜索，**递归和迭代** 都可以掌握以下，因为本题比较简单，了解二叉搜索树的特性。
-
+二叉搜索树中的搜索，**递归和迭代** 都可以掌握以下，了解二叉搜索树的特性和规则。
+```python
+# ways 1: use recursion
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root or root.val == val:
+            return root
+        if root.val > val:
+            return self.searchBST(root.left, val)
+        if root.val < val:
+            return self.searchBST(root.right, val)
+```
+```python
+# ways 2: 迭代
+class Solution:
+    def searchBST(self, root: TreeNode, val: int) -> TreeNode:
+        while root:
+            if val < root.val: root = root.left
+            elif val > root.val: root = root.right
+            else: return root
+        return None
+ ```       
 
 
 ## 98.
